@@ -1,0 +1,16 @@
+<!-- res/menu/bottom_navigation_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/fhome"
+        android:icon="@drawable/fhome"
+        android:title="Home"
+        android:titleTextColor="#FFFFFF"
+        android:iconTintMode="src_atop"
+        android:itemTextAppearance="@style/BottomNavigationText" />
+
+    <item android:id="@+id/fprofile"
+        android:icon="@drawable/fprofile"
+        android:title="Profile"
+        android:titleTextColor="#FFFFFF"
+        android:iconTintMode="src_atop"
+        android:itemTextAppearance="@style/BottomNavigationText" />
+</menu>

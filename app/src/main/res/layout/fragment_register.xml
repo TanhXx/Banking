@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/signinback"
+    android:id="@+id/register"
+    android:layout_height="match_parent"
+    tools:context=".Layout.Login">
+
+    <ImageView
+        android:layout_width="32dp"
+        android:id="@+id/back"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/arrow_small_left"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="351dp"
+        android:id="@+id/card"
+        android:layout_height="140dp"
+        android:layout_marginTop="160dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/custom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tk"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_height="50dp"
+        android:textColor="@color/Text"
+        android:textColorHint="@color/Text"
+        app:layout_constraintTop_toBottomOf="@+id/card"
+        tools:ignore="MissingConstraints">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_tk"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Tên đăng nhập"
+            android:fontFamily="@font/opensansitalic">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/sdt"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="74dp"
+        android:textColor="@color/Text"
+        android:textColorHint="@color/Text"
+        app:layout_constraintTop_toBottomOf="@+id/card"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_sdt"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/opensansitalic"
+            android:hint="Số điện thoại">
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/mk"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/Text"
+        android:textColorHint="@color/Text"
+        app:endIconMode="password_toggle"
+        app:layout_constraintTop_toBottomOf="@+id/tk"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_mk"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:fontFamily="@font/opensansitalic"
+            android:hint="Mật khẩu có độ dài từ 6 ký tự"
+            android:inputType="textPassword"></com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cfmk"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/Text"
+        android:textColorHint="@color/Text"
+        app:endIconMode="password_toggle"
+        app:layout_constraintTop_toBottomOf="@+id/mk"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="44dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_cfmk"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+
+            android:hint="Nhập lại mật khẩu"
+            android:inputType="textPassword"
+            android:fontFamily="@font/opensansitalic"></com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <RelativeLayout
+
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cfmk"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <LinearLayout
+            android:id="@+id/ln"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="30dp"
+            android:textColor="@color/Text">
+
+            <EditText
+                android:id="@+id/edt_name"
+                android:layout_width="220dp"
+                android:layout_height="50dp"
+                android:hint="Họ và tên"
+                android:fontFamily="@font/opensansitalic"
+                android:textColorHint="@color/Text" />
+
+            <EditText
+                android:id="@+id/edt_age"
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+
+                android:fontFamily="@font/opensansitalic"
+                android:hint="Tuổi"
+                android:inputType="number"
+                android:textColorHint="@color/Text" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnregister"
+            android:layout_marginTop="15dp"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/ln"
+            android:fontFamily="@font/opensanssemibiold"
+            android:textAllCaps="false"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/btnlogincustom"
+            android:text="Đăng Ký"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="84dp"
+        android:src="@drawable/matstercard"
+        app:layout_constraintEnd_toEndOf="@+id/card"
+        app:layout_constraintHorizontal_bias="0.869"
+        app:layout_constraintStart_toStartOf="@+id/card"
+        app:layout_constraintTop_toTopOf="@+id/card" />
+
+    <ImageView
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/paypass"
+        app:layout_constraintEnd_toEndOf="@+id/card"
+        app:layout_constraintHorizontal_bias="0.812"
+        app:layout_constraintStart_toStartOf="@+id/card"
+        app:layout_constraintTop_toTopOf="@+id/card" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="290dp"
+        android:layout_height="174dp"
+        android:layout_marginTop="68dp"
+        android:src="@drawable/man"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

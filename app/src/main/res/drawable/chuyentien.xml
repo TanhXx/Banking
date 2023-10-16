@@ -1,0 +1,14 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Màu viền khi không được chạm vào -->
+    <item android:state_pressed="false">
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" /> <!-- Màu viền không được chạm vào -->
+        </shape>
+    </item>
+    <!-- Màu viền khi được chạm vào -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <stroke android:color="#FFEB3B" android:width="2dp"/> <!-- Màu viền khi được chạm vào -->
+        </shape>
+    </item>
+</selector>

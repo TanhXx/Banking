@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">Banking</string>
+    <string name="yes">Có</string>
+    <string name="no">Không</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="LichHen">Dễ dàng đặt lịch hẹn để mở Tài Khoản thanh toán kèm đăng ký
+    dịch vụ Ngân hàng điện tử và phát hành Thẻ. Ưu tiên phục vụ với thời gian
+    và địa điểm theo mong muốn của bạn.</string>
+
+    <string-array name="lichhen">
+        <item>Chọn loại dịch vụ</item>
+        <item>Xác Thực Trực Tiếp(dành cho khách hàng cá nhân đã xác thực eKYC)</item>
+        <item>Dịch vụ Ngân hàng điện tử</item>
+        <item>Thẻ</item>
+        <item>Gửi tiền tiết kiệm</item>
+        <item>Giao dịch tiền mặt</item>
+        <item>Chuyển tiền</item>
+    </string-array>
+
+    <string name="text_with_color">
+    <font color="#FFFFF">Tới người khác</font>\n Chuyển khoản Napas 24/7, trong TanhX, liên \n ngân hàng  và chuyển tiền chứng khoán
+</string>
+
+    <string name="somot">
+        <font color="#FFFFF"><big><b>Tư vấn bởi đội ngũ chuyên nghiệp</b></big></font>\nGiúp bạn tự tin và chủ động hơn trong các quyết định mua và bán nhà
+</string>
+
+    <string name="sohai">
+        <font color="#FFFFF"><big><b>Chuẩn bị giấy tờ cần thiết để vay vốn</b></big></font>\nChúng tôi sẽ hỗ trợ bạn chuẩn bị những giấy tờ cần thiết để nộp hồ sơ vay vốn
+</string>
+
+    <string name="soba">
+        <font color="#FFFFF"><big><b>Nhận kết quả vay vốn mua nhà</b></big></font>\nChúng tôi sẽ duyệt hồ sơ và thông báo chi tiết khoảng vay mà bạn được nhận
+</string>
+
+    <string name="sobon">
+        <font color="#FFFFF"><big><b>Nhận khoản vay, mua nhà ngay</b></big></font>\nMột khi hồ sơ được duyệt bạn có thể nhận khoản vay và mua nhà ngay
+</string>
+
+    <string name="menhgia">
+        <font color="#FFFFF"><big><b>Mệnh giá cố định</b></big></font>\nTùy vào ngân sách, bạn có thể sở hữu CCTG mệnh giá từ 1000$
+</string>
+
+    <string name="thoigian">
+        <font color="#FFFFF"><big><b>Thời gian linh hoạt</b></big></font>\nCCTG có kỳ hạn 36 tháng hoặc 48 tháng, tuy nhiên bạn có thể mua bất cứ lúc nào
+</string>
+
+    <string name="tralai">
+        <font color="#FFFFF"><big><b>Trả lãi theo ngày</b></big></font>\nNhận lãi ngân hàng trả vào tài khoản tiết kiệm 1 ngày 1 lần
+</string>
+
+    <string name="laisuat">
+        <font color="#FFFFF"><big><b>Lãi suất tối ưu</b></big></font>\n- 4%/năm cho kì hạn dưới 1 năm\n- Điều chỉnh 3 tháng 1 lần
+</string>
+
+    <string name="loinhuan">
+        <font color="#FFFFF"><big><b>Lợi nhuận theo ngày</b></big></font>\nNhận lãi suất thỏa thuận với bên mua, tính theo số ngày đã nắm giữ CCTG trong thực tế
+</string>
+
+    <string name="gdt">
+        <font color="#FFFFF"><big><b>Giao dịch trực tuyến</b></big></font>\nDễ dàng kết nối và giao dịch với các khách hàng khác ngay trên ứng dụng
+</string>
+
+    <string name="xuli">
+        <font color="#FFFFF"><big><b>Xử lý tức thời</b></big></font>\nThời gian xử lí giao dịch trung bình dưới 1 phút, sau đó tiền sẽ được chuyển về tài khoản của bạn
+</string>
+
+    <string name="hsdn">
+          \t Công ty cổ phẩn ngoại thương TanhxBanking chính thức đi vào hoạt động ngày 02/09/2023. Là ngân hàng thương mại nhà nước đầu tiên được Chính phủ
+        lựa chọn thực hiện thí điểm cổ phần hoá, Ngân hàng TanhX chính thức hoạt động với tư cách là một Ngân hàng Thương mại Cổ phần từ ngày 02/09/2023 sau
+        khi thực hiện thành công kế hoạch cổ phần hóa thông qua việc phát hành cổ phiếu lần đầu ra công chúng. Cổ phiếu của TanhX chính thức được niêm yết
+        năm 2023
+</string>
+
+</resources>
+

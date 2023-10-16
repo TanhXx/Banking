@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:id="@+id/standardBottomSheet"
+    
+
+    app:behavior_peekHeight="0dp"
+    android:background="@android:color/transparent"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    tools:context=".Layout.BottomSheetTraiPhieu">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="100dp">
+        <TextView
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+         android:layout_marginTop="2dp"
+            android:background="@android:color/transparent"
+            android:layout_width="wrap_content"
+
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="CTCP TanhxBanking"
+            android:textSize="25dp"/>
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/logonew"
+            android:scaleType="centerCrop"/>
+    </LinearLayout>
+    <TextView
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+
+        android:text="Thông tin doanh nghiệp"
+        android:textSize="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="wrap_content"
+
+        android:text="@string/hsdn"
+        android:textSize="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content"/>
+
+
+
+        <LinearLayout
+            android:background="@drawable/layout_tp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginLeft="20dp"
+            app:cardCornerRadius="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="@color/black"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:textSize="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content"
+                android:text="Số lượng mua: "/>
+
+            <NumberPicker
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/sl"
+                android:layout_height="50dp"
+                android:descendantFocusability="blocksDescendants"
+                />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:gravity="center"
+                android:drawablePadding="5dp"
+                android:layout_gravity="center_vertical"
+                android:drawableLeft="@drawable/tp"
+                android:id="@+id/sodu"
+
+                android:fontFamily="@font/inria"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+
+    </LinearLayout>
+
+<!--    <TextView
+        android:drawablePadding="5dp"
+        android:layout_marginBottom="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:drawableLeft="@drawable/chuy"
+        android:gravity="center"
+        android:text="Mua tối thiểu 100 và tối đa là 1000 trái phiếu"
+        android:textSize="15dp"/>-->
+
+    <Button
+        android:textAllCaps="false"
+        android:background="@drawable/thanhtoan"
+        android:id="@+id/thanhtoan"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="70dp"
+        android:text="Thanh Toán" />
+
+
+</LinearLayout>

@@ -1,0 +1,8 @@
+<!-- res/drawable/text_color_selector.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Trạng thái khi mục được chọn -->
+    <item android:color="#FFFFFF" android:state_checked="true" />
+
+    <!-- Trạng thái khi mục không được chọn -->
+    <item android:color="#FFFFFF" />
+</selector>

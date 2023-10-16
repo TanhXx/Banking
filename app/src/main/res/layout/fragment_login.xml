@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/signinback"
+    android:id="@+id/login"
+    android:layout_height="match_parent"
+    tools:context=".Layout.Login">
+
+
+    <!--<ImageView
+        android:id="@+id/flag"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/flagvn" />-->
+
+    <ImageView
+        android:id="@+id/logobank"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/logonew" />
+<!--
+    <TextView
+        android:id="@+id/textbank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/logobank"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15sp"
+        android:fontFamily="@font/bloody"
+        android:text="TanhX Banking"
+        android:textColor="#0089FF"
+        android:textSize="25sp"
+        android:textStyle="bold" />-->
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+
+        android:layout_height="50dp"
+        android:background="@drawable/custom_edtdn"
+        android:id="@+id/tk"
+        android:textColorHint="#00B0FF"
+        android:layout_below="@id/logobank"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="match_parent"
+            android:textAllCaps="false"
+            android:layout_height="50dp"
+            android:fontFamily="@font/opensansitalic"
+            android:id="@+id/edt_tk"
+            android:hint="Tên đăng nhập"
+           >
+
+        </com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:hintTextAppearance="@style/CustomHintText"
+        android:layout_width="match_parent"
+        android:background="@drawable/custom_edtdn"
+        android:layout_height="50dp"
+        android:id="@+id/mk"
+        app:endIconMode="password_toggle"
+        android:textColorHint="#00B0FF"
+        android:layout_below="@id/tk"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="match_parent"
+            android:textAllCaps="false"
+            android:fontFamily="@font/opensansitalic"
+            android:layout_height="50dp"
+            android:drawableRight="@drawable/ic_launcher_background"
+            android:hint="Mật khẩu"
+            android:id="@+id/edt_mk"
+            android:inputType="textPassword"
+           ></com.google.android.material.textfield.TextInputEditText>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnlogin"
+        android:layout_width="149dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/mk"
+        android:textAllCaps="false"
+        android:layout_marginLeft="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/btnlogincustom"
+        android:text="Đăng nhập"
+        android:fontFamily="@font/constan"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:background="@drawable/custom_textview"
+        android:layout_height="wrap_content"
+        android:text="Quên Mật Khẩu ?"
+        android:id="@+id/quenmk"
+        android:textStyle="bold"
+        android:fontFamily="@font/constan"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="30dp"
+        android:layout_below="@+id/mk"
+        android:textSize="13dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#00B0FF"/>
+
+    <LinearLayout
+        android:id="@+id/logindiff"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/btnlogin"
+        android:layout_height="60dp">
+        <androidx.cardview.widget.CardView
+            android:background="@drawable/custom_logindiff"
+            app:cardCornerRadius="20dp"
+            android:id="@+id/loginfb"
+            android:layout_width="50dp"
+            android:layout_marginRight="30dp"
+            android:layout_height="50dp">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="33dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/fb"
+                android:layout_height="33dp"/>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:background="@drawable/custom_logindiff"
+            android:id="@+id/logingg"
+            android:layout_width="50dp"
+            app:cardCornerRadius="20dp"
+            android:layout_height="50dp">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="33dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/google"
+                android:layout_height="33dp"/>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:background="@drawable/custom_logindiff"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/loginap"
+            app:cardCornerRadius="20dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="33dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/apple"
+                android:layout_height="33dp"/>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_below="@id/logindiff"
+        android:layout_marginTop="10sp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+
+        <View
+
+            android:id="@+id/leftLine"
+            android:layout_width="65dp"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:background="#00B0FF" />
+
+        <TextView
+            android:id="@+id/motk"
+            android:fontFamily="@font/constan"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bạn chưa có tài khoản? Đăng ký."
+            android:textColor="#00B0FF"
+            android:textStyle="bold" />
+        <View
+            android:id="@+id/rightLine"
+            android:layout_width="65dp"
+            android:layout_height="1dp"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:background="#00B0FF" />
+
+
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="40dp"
+        android:src="@drawable/phonecall"
+        android:id="@+id/datlich"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+
+
+        android:layout_height="40dp"
+        />
+
+
+</RelativeLayout>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "839806990746",
+    "firebase_url": "https://banking-6cbb3-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "banking-6cbb3",
+    "storage_bucket": "banking-6cbb3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839806990746:android:19168a394b545b40c96223",
+        "android_client_info": {
+          "package_name": "com.example.banking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "839806990746-hoo0c62d0n9lf5bumgpfhbd6cgqd5lcj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDnJgo3LqFltnvALiWKc_oLR_p8xVCK7w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839806990746-hoo0c62d0n9lf5bumgpfhbd6cgqd5lcj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

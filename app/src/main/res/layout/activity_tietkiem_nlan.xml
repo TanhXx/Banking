@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/tietkiemnlan"
+    android:layout_height="match_parent"
+    tools:context=".Layout.TietkiemNlan">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+
+            android:id="@+id/head"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/home"
+                android:layout_centerHorizontal="true"
+
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:src="@drawable/icontietkiem2"/>
+            <TextView
+                android:textStyle="bold"
+                android:layout_below="@+id/home"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:layout_height="wrap_content"
+                android:text="Chứng chỉ tiền gửi bảo lộc"/>
+            <TextView
+                android:gravity="center"
+                android:layout_marginTop="40dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/home"
+                android:layout_width="220dp"
+                android:textSize="25dp"
+                android:id="@+id/sh"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="Sinh lời tối ưu cho dòng tiền ngắn hạn"/>
+
+            <TextView
+
+                android:gravity="center"
+                android:id="@+id/tv"
+                android:layout_width="350dp"
+                android:layout_below="@+id/sh"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
+                android:text="Hưởng lợi nhuận theo số ngày nắm giữ thực tế, linh hoạt bán trước hạn với lãi suất cạnh tranh. Gửi tối thiểu từ 10.000$"
+                android:textSize="20dp"/>
+            <LinearLayout
+                android:gravity="center_horizontal"
+                android:id="@+id/layout"
+                android:layout_below="@+id/tv"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:drawableTop="@drawable/baomat"
+                    android:text="Tiền gửi an toàn &amp; bảo đảm"
+                    android:layout_width="110dp"
+                    android:textSize="15dp"
+                    android:layout_height="100dp"
+                    />
+                <ImageView
+                    android:src="@drawable/bonptgif"
+                    android:id="@+id/demo"
+                    android:scaleType="centerCrop"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:layout_width="110dp"
+                    android:textSize="15dp"
+                    android:layout_height="100dp"
+                    />
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:drawableTop="@drawable/nhantien"
+                    android:text="Linh hoạt bán lại khi cần vốn"
+                    android:layout_width="110dp"
+                    android:textSize="15dp"
+                    android:layout_height="100dp"
+                    />
+            </LinearLayout>
+            <androidx.cardview.widget.CardView
+
+                android:id="@+id/cardview"
+                android:layout_marginTop="7dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                app:cardCornerRadius="15dp"
+                android:layout_below="@+id/gach1"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:text="Nhập số tiền bạn muốn gửi"
+                        android:textColor="@color/black"
+                        android:textSize="22dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints" />
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="4dp"
+                        android:gravity="center"
+                        android:text="$"
+                        android:textColor="@color/black"
+                        android:textSize="25dp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@+id/edtst"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                    <EditText
+                        android:textStyle="bold"
+                        android:id="@+id/edtst"
+                        android:layout_width="200dp"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="40dp"
+                        android:gravity="center"
+                        android:hint="Số tiền"
+                        android:inputType="number"
+                        android:textSize="20dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.526"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Vui lòng nhập số tiền là bội số của 10.000$"
+                        android:textSize="15dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.61"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/edtst"
+                        app:layout_constraintVertical_bias="0.152" />
+
+                    <!--<TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="116dp"
+                        android:gravity="center"
+                        android:text="Số dư: "
+                        android:fontFamily="@font/inria"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:textSize="25dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView12" />-->
+
+                    <!-- <TextView
+                        android:fontFamily="@font/inria"
+                        android:textStyle="bold"
+                        android:id="@+id/soduchovay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        android:gravity="center"
+                        android:text="100"
+                        android:textColor="@color/black"
+                        android:textSize="25dp"
+                        app:layout_constraintStart_toEndOf="@+id/textView13"
+                        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+-->
+                    <Button
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/custom_bogocct"
+                        android:id="@+id/cf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Xác nhận"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/gach1"
+                android:background="#D6CCCC"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@+id/layout"
+                tools:ignore="NotSibling" />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:id="@+id/gach2"
+                android:background="#D6CCCC"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@+id/cardview"
+                tools:ignore="NotSibling" />
+
+            <LinearLayout
+                android:id="@+id/ctsp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/gach2"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Chi tiết sản phẩm"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Chứng chỉ tiền gửi Bảo lộc là giấy tờ có giá do TanhX phát hành, có giá trị như 1 khoản tiền tiết kiệm và có đặc tính sau:"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:drawableLeft="@drawable/menhgiacodinh"
+                    android:drawablePadding="15dp"
+                    android:textSize="15dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/menhgia" />
+
+                <TextView
+                    android:drawableLeft="@drawable/thoigianlinhhoat"
+                    android:drawablePadding="15dp"
+                    android:textSize="15dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/thoigian" />
+
+                <TextView
+                    android:textSize="15dp"
+                    android:drawableLeft="@drawable/thoigianlinhhoat"
+                    android:drawablePadding="15dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/tralai" />
+
+                <TextView
+                    android:textSize="15dp"
+                    android:drawableLeft="@drawable/laisuattoiuu"
+                    android:drawablePadding="15dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/laisuat" />
+            </LinearLayout>
+            <TextView
+                android:id="@+id/gach3"
+                android:background="#D6CCCC"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layout_below="@+id/ctsp"
+                tools:ignore="NotSibling" />
+            <LinearLayout
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp"
+                android:layout_below="@+id/gach3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cơ chế chuyển nhượng"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Có thể chuyển nhượng cho đối tác sau 1 năm khi đối tác có nhu cầu "
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:drawableLeft="@drawable/thoigianlinhhoat"
+                    android:drawablePadding="15dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/loinhuan" />
+                <TextView
+                    android:drawableLeft="@drawable/phone"
+                    android:textSize="15dp"
+                    android:drawablePadding="15dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/gdt" />
+                <TextView
+                    android:drawableLeft="@drawable/tucthoi"
+                    android:textSize="15dp"
+                    android:drawablePadding="15dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/xuli" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

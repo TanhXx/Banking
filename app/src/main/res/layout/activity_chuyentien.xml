@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:clickable="true"
+    android:id="@+id/ct"
+    android:focusable="true"
+
+    android:layout_height="match_parent"
+    tools:context=".Layout.Chuyentien">
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/holderct"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <ImageView
+        android:id="@+id/gifback"
+        android:layout_width="411dp"
+        android:layout_height="match_parent"
+        android:alpha="0.5"
+        android:background="@drawable/gifbackchuyentien"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="MissingConstraints" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="10dp"
+
+                android:layout_marginTop="16dp"
+                android:src="@drawable/arrow_small_left"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:layout_marginEnd="100dp"
+                android:fontFamily="@font/inria"
+                android:text="Chuyển tiền"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.888"
+                tools:ignore="MissingConstraints" />
+
+            <!--    <ImageView
+                    android:id="@+id/notification"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="4dp"
+                    android:src="@drawable/bell"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="0dp"
+
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="325dp"
+                android:layout_height="115dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                app:cardCornerRadius="50dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                   >
+
+                    <androidx.cardview.widget.CardView
+
+                        android:id="@+id/cardView2"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="24dp"
+                        app:cardCornerRadius="80dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/avatar"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:background="@drawable/chuyentien"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/avtgoc" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="120dp"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="MissingConstraints">
+
+
+                        <TextView
+                            android:id="@+id/tentk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/britanic"
+                            android:textColor="@color/black"
+                            android:textSize="20dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/sotk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableLeft="@drawable/group1332"
+                            android:drawablePadding="10dp"
+                            android:fontFamily="@font/opensansbold"
+                            android:textColor="@color/black"
+                            android:textSize="17dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:drawablePadding="10dp"
+                            android:id="@+id/soduvi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="32dp"
+                            android:layout_marginBottom="8dp"
+                            android:drawableLeft="@drawable/sd"
+                            android:fontFamily="@font/opensansbold"
+                            android:gravity="center"
+
+                            android:textColor="@color/black"
+                            android:textSize="17dp" />
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="130dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5sp"
+                android:drawablePadding="10dp"
+                android:layout_marginTop="20sp"
+                android:drawableLeft="@drawable/circle_user12"
+                android:fontFamily="@font/constan"
+                android:gravity="center_vertical"
+                android:text="Thông tin người nhận"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                app:cardBackgroundColor="#F5F6FA"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                app:cardCornerRadius="20dp">
+
+                <EditText
+                    android:clickable="true"
+                    android:focusableInTouchMode="true"
+                    android:padding="10dp"
+                    android:fontFamily="@font/inria"
+                    android:id="@+id/sotknguoinhan"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:hint="Nhập số tài khoản người nhận">
+
+                </EditText>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5sp"
+                android:layout_marginTop="20sp"
+                android:drawableLeft="@drawable/info"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/constan"
+                android:gravity="center_vertical"
+                android:text="Thông tin giao dịch"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <androidx.cardview.widget.CardView
+                app:cardBackgroundColor="#F5F6FA"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="5dp"
+                app:cardCornerRadius="20dp">
+
+                <EditText
+                    android:id="@+id/sotien"
+android:focusableInTouchMode="true"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:fontFamily="@font/inria"
+                    android:hint="Số tiền"
+                    android:inputType="number">
+
+                </EditText>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                app:cardBackgroundColor="#F5F6FA"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="5dp"
+                app:cardCornerRadius="20dp">
+
+                <EditText
+                    android:focusableInTouchMode="true"
+                    android:id="@+id/ndgd"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:drawableRight="@drawable/pen"
+                    android:fontFamily="@font/inria"
+                    android:background="@null"
+                    android:hint="Nội dung giao dịch"
+                    >
+
+                </EditText>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/chuyen"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:background="@drawable/custom_bogocct"
+                android:drawablePadding="-30dp"
+                android:fontFamily="@font/inria"
+                android:gravity="center"
+                android:text="Chuyển tiền"
+                android:textAllCaps="false"
+                android:textSize="17dp" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

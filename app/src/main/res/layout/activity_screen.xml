@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#292F3F"
+    android:layout_height="match_parent"
+    tools:context=".Layout.Screen">
+<FrameLayout
+    android:id="@+id/layoutsend"
+    android:layout_width="50dp"
+    android:layout_height="50dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginRight="16dp"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/back_chat_input"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="30dp"
+        android:layout_marginLeft="2dp"
+        android:layout_gravity="center"
+        android:layout_height="30dp"
+        android:src="@drawable/send" />
+</FrameLayout>
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/appCompatImageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+
+        android:background="@drawable/back_content_top"
+        app:layout_constraintBottom_toTopOf="@id/layoutsend"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/inputmess"
+        android:layout_width="324dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="12dp"
+
+        android:background="@drawable/back_chat_input"
+        android:gravity="center"
+        android:hint="Nhập"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/layoutsend"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageback"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/arrow_small_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/appCompatImageView" />
+
+    <ImageView
+        android:clickable="true"
+        android:id="@+id/imageinfo"
+        android:onClick="mess"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/info" />
+
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="5dp"
+        android:gravity="center"
+        android:text="Bùi Tuấn Anh"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/imageinfo"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toEndOf="@+id/imageback"
+        app:layout_constraintTop_toTopOf="@+id/appCompatImageView"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:background="#FBF9F9"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/rcv"
+        app:layout_constraintBottom_toTopOf="@id/layoutsend"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/textName"
+        tools:layout_editor_absoluteX="0dp" />
+ <!--   <androidx.recyclerview.widget.RecyclerView
+        android:background="#FBF9F9"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/rcvadmin"
+        app:layout_constraintBottom_toTopOf="@id/layoutsend"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/textName"
+        tools:layout_editor_absoluteX="0dp" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

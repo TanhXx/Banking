@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--suppress ALL -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/datlich"
+    android:clickable="true"
+    android:background="@drawable/backgrbank"
+    android:layout_height="match_parent">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+        android:background="#0E6793"
+        android:id="@+id/appbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="40dp">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:textColor="@color/white"
+                android:fontFamily="@font/constan"
+                android:gravity="center"
+                android:text="Đặt lịch hẹn cùng TanhXBank"
+                android:layout_height="40dp"/>
+            <ImageView
+                android:layout_marginLeft="10sp"
+                android:layout_width="40dp"
+                android:src="@drawable/arrow_small_left"
+                android:layout_gravity="center_vertical"
+                android:layout_height="40dp"
+                android:id="@+id/imagereturn"/>
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:fontFamily="@font/constan"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:drawablePadding="10dp"
+        android:layout_width="wrap_content"
+        android:drawableLeft="@drawable/datlich1"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:text="Thông tin sản phẩm dịch vụ"/>
+
+    <TextView
+        android:fontFamily="@font/constan"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="20sp"
+        android:textColor="@color/black"
+        android:gravity="center_vertical"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/file_circle_info1"
+        android:textStyle="bold"
+        android:layout_marginTop="20sp"
+        android:layout_height="wrap_content"
+        android:text="Dịch vụ đăng ký"/>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:background="@drawable/custom_chonloaidv"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" >
+
+    </Spinner>
+    <TextView
+        android:fontFamily="@font/constan"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="20sp"
+        android:textColor="@color/black"
+        android:gravity="center_vertical"
+        android:drawableLeft="@drawable/calendar_clock"
+        android:textStyle="bold"
+        android:drawablePadding="10dp"
+        android:layout_marginTop="20sp"
+        android:layout_height="wrap_content"
+        android:text="Thời gian đặt lịch"/>
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:fontFamily="@font/constan"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20sp"
+        android:background="@drawable/custom_chonloaidv"
+        android:layout_marginRight="20sp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+
+      >
+        <TextView
+            android:fontFamily="@font/constan"
+            android:id="@+id/textintb"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn ngày đặt lịch"
+         />
+
+    </androidx.appcompat.widget.Toolbar>
+
+   <androidx.appcompat.widget.LinearLayoutCompat
+       android:layout_gravity="center"
+       android:layout_width="wrap_content"
+       android:orientation="vertical"
+       android:layout_marginTop="20dp"
+       android:layout_height="wrap_content">
+       <EditText
+           android:layout_width="match_parent"
+           android:hint="Họ và tên"
+           android:fontFamily="@font/constan"
+           android:textColorHint="@color/black"
+           android:id="@+id/hvt"
+           android:layout_height="50dp"/>
+       <EditText
+           android:fontFamily="@font/constan"
+           android:layout_width="match_parent"
+           android:layout_marginTop="5dp"
+           android:textColorHint="@color/black"
+           android:hint="Số điện thoại"
+           android:id="@+id/sdt"
+           android:layout_height="50dp"/>
+       <GridLayout
+           android:layout_gravity="center"
+           android:id="@+id/gridlayout"
+
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:columnCount="4"
+           android:rowCount="3">
+
+           <Button
+                android:layout_marginTop="5dp"
+
+               android:id="@+id/tambamuoi"
+               android:background="#58D8E6"
+               android:textColor="@color/black"
+               android:text="08h30" />
+
+           <Button
+               android:id="@+id/chinkhong"
+               android:layout_marginTop="5dp"
+               android:background="#58D8E6"
+               android:layout_marginLeft="3dp"
+               android:textColor="@color/black"
+               android:text="09h00" />
+
+           <Button
+               android:id="@+id/chinbamuoi"
+               android:layout_marginTop="5dp"
+               android:background="#58D8E6"
+               android:layout_marginLeft="3dp"
+               android:textColor="@color/black"
+               android:text="09h30" />
+
+           <Button
+               android:background="#58D8E6"
+               android:id="@+id/muoi"
+               android:layout_marginTop="5dp"
+               android:layout_marginLeft="3dp"
+               android:textColor="@color/black"
+               android:text="10h00" />
+
+           <Button
+               android:background="#58D8E6"
+               android:id="@+id/muoibamuoi"
+               android:layout_marginTop="3dp"
+               android:textColor="@color/black"
+               android:text="10h30" />
+
+           <Button
+               android:background="#58D8E6"
+               android:id="@+id/muoimot"
+               android:layout_marginLeft="3dp"
+               android:layout_marginTop="3dp"
+               android:textColor="@color/black"
+               android:text="11h00" />
+
+           <Button
+               android:background="#58D8E6"
+               android:layout_marginTop="3dp"
+               android:id="@+id/muoimotbamuoi"
+               android:layout_marginLeft="3dp"
+               android:textColor="@color/black"
+               android:text="11h30" />
+
+           <Button
+               android:background="#58D8E6"
+               android:layout_marginTop="3dp"
+               android:id="@+id/muoihai"
+               android:layout_marginLeft="3dp"
+               android:textColor="@color/black"
+               android:text="12h00" />
+
+           <Button
+               android:id="@+id/muoihaibamuoi"
+               android:background="#58D8E6"
+               android:layout_marginTop="3dp"
+               android:textColor="@color/black"
+               android:text="12h30" />
+
+           <Button
+               android:background="#58D8E6"
+               android:id="@+id/muoiba"
+               android:layout_marginTop="3dp"
+               android:layout_marginLeft="3dp"
+               android:textColor="@color/black"
+               android:text="13h00" />
+
+           <Button
+               android:background="#58D8E6"
+               android:id="@+id/muoibabamuoi"
+               android:layout_marginTop="3dp"
+               android:layout_marginLeft="3dp"
+               android:textColor="@color/black"
+               android:text="13h30" />
+
+           <Button
+               android:background="#58D8E6"
+               android:id="@+id/muoibon"
+               android:layout_marginLeft="3dp"
+               android:layout_marginTop="3dp"
+               android:textColor="@color/black"
+               android:text="14h00" />
+
+       </GridLayout>
+
+   </androidx.appcompat.widget.LinearLayoutCompat>
+    <ImageView
+        android:fontFamily="@font/constan"
+        android:layout_width="120dp"
+        android:id="@+id/next"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/gui"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="50dp"/>
+
+
+</LinearLayout>

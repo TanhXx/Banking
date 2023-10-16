@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:background="@drawable/backgrbank"
+    android:orientation="vertical"
+    android:layout_height="300dp">
+
+    <ImageView
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:src="@drawable/star_green" />
+<TextView
+    android:textColor="@color/black"
+    android:fontFamily="@font/constan"
+    android:textSize="20dp"
+    android:layout_marginTop="30dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textAlignment="center"
+    android:text="@string/LichHen"
+    />
+
+       <TextView
+           android:gravity="center"
+           android:id="@+id/tructiep"
+          android:drawableRight="@drawable/datlich"
+           android:textColor="@color/black"
+           android:layout_marginTop="15dp"
+           android:textStyle="bold"
+           android:layout_width="match_parent"
+           android:layout_height="40dp"
+           android:text="Đặt Lịch Trực Tiếp"
+           android:textSize="20sp">
+       </TextView>
+
+    <TextView
+        android:drawableRight="@drawable/datlich"
+        android:layout_width="match_parent"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_height="40dp"
+        android:text="Đặt Lịch Online"
+        android:id="@+id/tructuyen"
+        android:textSize="20sp">
+    </TextView>
+<LinearLayout
+
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/btnhuy"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/custom_closedatlich"
+        android:text="Hủy" />
+</LinearLayout>
+
+
+</LinearLayout>
+
+
+</FrameLayout>
