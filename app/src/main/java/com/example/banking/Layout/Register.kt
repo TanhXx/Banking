@@ -3,6 +3,7 @@ import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
+import android.util.Patterns
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,21 +38,11 @@ class Register : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
-
         super.onViewCreated(view, savedInstanceState)
-
-        // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
         dbrf = FirebaseDatabase.getInstance().getReference()
-
-
-        // Write a message to the database
-
         binding.btnregister.setOnClickListener {
             register()
-
-
         }
 
         binding.back.setOnClickListener {
@@ -60,9 +51,16 @@ class Register : Fragment() {
         binding.register.setOnClickListener {
             Hidekeybroad().hidekeybroadfrag(this)
         }
+
+
     }
 
 
+
+
+   private fun checkemail(email : String) : Boolean{
+       return Patterns.EMAIL_ADDRESS.matcher(email).matches()
+   }
     private fun register(){
         var gmail = binding.edtTk.text.toString()
         var mk = binding.edtMk.text.toString()
@@ -70,7 +68,10 @@ class Register : Fragment() {
         var name = binding.edtName.text.toString()
         var age = binding.edtAge.text.toString()
         var sdt = binding.edtSdt.text.toString()
-
+        if (checkemail(gmail)){
+        }else {
+            Toast.makeText(requireContext(), "Gmail không đúng định dạng", Toast.LENGTH_SHORT).show()
+        }
         if(mk == cfmk && mk.length in 6..10 &&
             !TextUtils.isEmpty(name) && !TextUtils.isEmpty(age) &&
             !TextUtils.isEmpty(sdt) && age.toIntOrNull() != null &&
@@ -165,6 +166,7 @@ class Register : Fragment() {
             Toast.makeText(requireContext(), "Mật khẩu từ 6-10 kí tự, tuổi phải lớn hơn 18 ", Toast.LENGTH_SHORT).show()
         }
     }
+
 
 
 }

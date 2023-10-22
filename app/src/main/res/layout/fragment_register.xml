@@ -46,7 +46,7 @@
             android:id="@+id/edt_tk"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="Tên đăng nhập"
+            android:hint="Tên đăng nhập là gmail"
             android:fontFamily="@font/opensansitalic">
 
         </com.google.android.material.textfield.TextInputEditText>
@@ -96,7 +96,7 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:fontFamily="@font/opensansitalic"
-            android:hint="Mật khẩu có độ dài từ 6 ký tự"
+            android:hint="Mật khẩu có độ dài từ 6-10 ký tự"
             android:inputType="textPassword"></com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 

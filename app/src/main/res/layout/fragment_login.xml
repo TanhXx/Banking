@@ -25,25 +25,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="100dp"
         android:src="@drawable/logonew" />
-<!--
-    <TextView
-        android:id="@+id/textbank"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/logobank"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="15sp"
-        android:fontFamily="@font/bloody"
-        android:text="TanhX Banking"
-        android:textColor="#0089FF"
-        android:textSize="25sp"
-        android:textStyle="bold" />-->
 
     <com.google.android.material.textfield.TextInputLayout
+        app:hintTextAppearance="@style/CustomHintText"
+        app:helperTextEnabled="true"
         android:layout_width="match_parent"
-
-        android:layout_height="50dp"
         android:background="@drawable/custom_edtdn"
+        android:layout_height="wrap_content"
         android:id="@+id/tk"
         android:textColorHint="#00B0FF"
         android:layout_below="@id/logobank"
@@ -57,43 +45,41 @@
             android:focusableInTouchMode="true"
             android:layout_width="match_parent"
             android:textAllCaps="false"
-            android:layout_height="50dp"
             android:fontFamily="@font/opensansitalic"
+            android:layout_height="wrap_content"
+            android:hint="Tài khoản"
             android:id="@+id/edt_tk"
-            android:hint="Tên đăng nhập"
-           >
-
-        </com.google.android.material.textfield.TextInputEditText>
+            ></com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
     <com.google.android.material.textfield.TextInputLayout
-        app:hintTextAppearance="@style/CustomHintText"
-        android:layout_width="match_parent"
-        android:background="@drawable/custom_edtdn"
-        android:layout_height="50dp"
         android:id="@+id/mk"
-        app:endIconMode="password_toggle"
-        android:textColorHint="#00B0FF"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/tk"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="30dp">
+        android:layout_marginTop="22dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/custom_edtdn"
+        android:textColorHint="#00B0FF"
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        app:endIconMode="password_toggle"
+        app:hintTextAppearance="@style/CustomHintText">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_mk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:clickable="true"
             android:focusableInTouchMode="true"
-            android:layout_width="match_parent"
-            android:textAllCaps="false"
             android:fontFamily="@font/opensansitalic"
-            android:layout_height="50dp"
-            android:drawableRight="@drawable/ic_launcher_background"
             android:hint="Mật khẩu"
-            android:id="@+id/edt_mk"
             android:inputType="textPassword"
-           ></com.google.android.material.textfield.TextInputEditText>
+            android:textAllCaps="false"></com.google.android.material.textfield.TextInputEditText>
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

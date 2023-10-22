@@ -31,7 +31,6 @@ import java.util.Locale
 
 class Login : Fragment() {
     private lateinit var binding: FragmentLoginBinding
-    private var countflag = 0
     var isPasswordVisiable = false
     private lateinit var auth: FirebaseAuth
     override fun onCreateView(
@@ -147,18 +146,6 @@ class Login : Fragment() {
 
     }
 
-
- /*   private fun language() {
-        binding.flag.setOnClickListener {
-            countflag++
-            if(countflag%2 == 0){
-                binding.flag.setImageResource(R.drawable.flagvn)
-            }else{
-                binding.flag.setImageResource(R.drawable.flaguk)
-            }
-        }
-    }
-*/
 
     fun hidekeybroad(){
         val activiti = requireActivity()
