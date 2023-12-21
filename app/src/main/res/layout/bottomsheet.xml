@@ -7,7 +7,7 @@
     android:id="@+id/standardBottomSheet"
     app:behavior_hideable="true"
     app:behavior_peekHeight="0dp"
-    android:background="@android:color/transparent"
+
     app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
     <RelativeLayout
@@ -16,7 +16,6 @@
         android:layout_height="wrap_content">
 
         <ImageView
-
             android:layout_width="wrap_content"
             android:layout_height="150dp"
             android:layout_marginStart="20dp"
@@ -29,7 +28,7 @@
 
     </RelativeLayout>
    <LinearLayout
-
+        android:background="@color/white"
        android:orientation="vertical"
        android:layout_width="match_parent"
        android:layout_height="match_parent">
@@ -63,7 +62,7 @@
            android:layout_marginTop="15dp"
            android:id="@+id/giuatanhx"
            android:gravity="center"
-           android:text="Giữa các tài khoản TanhX của bạn"
+           android:text="Chuyển tiền bằng QR code"
            android:textSize="17dp"
            android:drawableLeft="@drawable/bank1"
            android:drawablePadding="10dp"

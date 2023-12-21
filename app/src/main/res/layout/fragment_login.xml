@@ -7,6 +7,12 @@
     android:id="@+id/login"
     android:layout_height="match_parent"
     tools:context=".Layout.Login">
+    <ProgressBar
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress"/>
 
 
     <!--<ImageView
@@ -96,12 +102,12 @@
         android:text="Đăng nhập"
         android:fontFamily="@font/constan"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        />
+        android:textSize="20sp" />
 
 
     <TextView
         android:layout_width="wrap_content"
+        android:padding="5dp"
         android:background="@drawable/custom_textview"
         android:layout_height="wrap_content"
         android:text="Quên Mật Khẩu ?"

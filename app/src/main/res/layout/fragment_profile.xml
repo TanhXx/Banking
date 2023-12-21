@@ -80,6 +80,7 @@
 </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/feedback"
             app:cardCornerRadius="15dp"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
@@ -88,13 +89,13 @@
                 android:padding="10dp"
                 android:layout_width="match_parent"
                 android:fontFamily="@font/inria"
-                android:text="Cài Đặt"
+                android:text="Góp ý"
                 android:textColor="@color/black"
                 android:textSize="23dp"
                 android:drawableRight="@drawable/angle_small_right"
                 android:drawablePadding="20dp"
                 android:gravity="center_vertical"
-                android:drawableLeft="@drawable/settings"
+                android:drawableLeft="@drawable/feedback_hand"
                 android:layout_height="50dp"/>
         </androidx.cardview.widget.CardView>
 
@@ -108,7 +109,7 @@
                 android:id="@+id/uudai"
                 android:layout_width="match_parent"
                 android:fontFamily="@font/inria"
-                android:text="Ưu đãi"
+                android:text="Đánh giá"
                 android:textColor="@color/black"
                 android:textSize="23dp"
                 android:drawableRight="@drawable/angle_small_right"

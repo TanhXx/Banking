@@ -20,13 +20,6 @@ class TientietkiemService : Service() {
             var tienguitp = HomePage.tientraiphieu
             var time = HomePage.timechenhlech
 
-
-
-
-
-
-
-
              var tienlai = ((tientietkiem * 0.000109589) * time) + tientietkiem
             var tienlaitp = ((tienguitp * 0.000152055) * HomePage.timechenhlechtp) + tienguitp
             Log.d("tietkiem", "Tiền gốc và lãi của gửi thường hiện tại là: ${tienlai}, bạn đã gửi được ${time} ngày")

@@ -10,6 +10,7 @@ import android.content.IntentFilter
 import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,7 +28,6 @@ import com.google.firebase.database.*
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
-
 
 class Login : Fragment() {
     private lateinit var binding: FragmentLoginBinding
@@ -51,22 +51,55 @@ class Login : Fragment() {
         intentFilter.addAction(Intent.ACTION_AIRPLANE_MODE_CHANGED)
         registerReceiver(requireContext(),appBroadcast, intentFilter,RECEIVER_NOT_EXPORTED)
 
-
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         hidekeybroad()
         auth = FirebaseAuth.getInstance()
+        /*var callbackManager = CallbackManager.Factory.create()*/
+
 
 
        /* language()*/
         calendar()
+        /*binding.loginfb.setOnClickListener {
+            binding.loginfb.setOnClickListener {
+                // Gọi phương thức đăng nhập của Facebook
+                LoginManager.getInstance().logInWithReadPermissions(this, listOf("email", "public_profile"))
+                LoginManager.getInstance().registerCallback(callbackManager, object :
+                    FacebookCallback<LoginResult> {
+                    override fun onSuccess(loginResult: LoginResult) {
+                        // Đăng nhập thành công, nhận được token từ Facebook
+                        val accessToken = loginResult.accessToken
+
+                        // Sử dụng token để đăng nhập vào Firebase Authentication
+                        val credential = FacebookAuthProvider.getCredential(accessToken.token)
+                        FirebaseAuth.getInstance().signInWithCredential(credential)
+                            .addOnCompleteListener { task ->
+                                if (task.isSuccessful) {
+                                    // Xác thực thành công
+                                    val user = FirebaseAuth.getInstance().currentUser
+                                    // Tiếp tục xử lý hoặc hiển thị thông báo đăng nhập thành công
+                                } else {
+                                    // Xác thực thất bại, xử lý thông báo lỗi hoặc thực hiện các hành động khác
+                                }
+                            }
+                    }
+
+                    override fun onCancel() {
+                        // Người dùng hủy đăng nhập
+                    }
+
+                    override fun onError(exception: FacebookException) {
+                        // Xảy ra lỗi khi đăng nhập
+                    }
+                })
+            }
+
+        }*/
 
 
-        binding.quenmk.setOnClickListener {
 
-        }
 
         view.setOnClickListener {
             val hidekeybroads = Hidekeybroad()
@@ -75,8 +108,9 @@ class Login : Fragment() {
 
 
         binding.btnlogin.setOnClickListener {
-            var tk = binding.edtTk.text.toString()
-            var mk = binding.edtMk.text.toString()
+            binding.progress.visibility = View.VISIBLE
+            var tk = binding.edtTk.text.toString().trim()
+            var mk = binding.edtMk.text.toString().trim()
 
             if(tk.isEmpty() && mk.isEmpty()){
                 Toast.makeText(requireContext(), "Error", Toast.LENGTH_SHORT).show()
@@ -143,6 +177,22 @@ class Login : Fragment() {
         binding.motk.setOnClickListener {
             parentFragmentManager.beginTransaction().replace(R.id.holder,Register()).addToBackStack(null).commit()
         }
+        binding.quenmk.setOnClickListener {
+            if(binding.edtTk.text!!.isEmpty()){
+                Toast.makeText(requireContext(), "Bạn chưa nhập tài khoản", Toast.LENGTH_SHORT).show()
+            }else{
+                Log.d("huhu", "onViewCreated: OK")
+                auth.sendPasswordResetEmail(binding.edtTk.text.toString())
+                    .addOnCompleteListener { task ->
+                        Log.d("huhu", "onViewCreated: ok")
+                        if (task.isSuccessful) {
+                            Toast.makeText(requireContext(), "Vui lòng kiểm tra hộp thư email đã nhập!", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(requireContext(), "Email không tồn tại!", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+            }
+            }
 
     }
 
@@ -159,22 +209,27 @@ class Login : Fragment() {
     @SuppressLint("MissingInflatedId")
     private fun calendar() {
         binding.datlich.setOnClickListener {
-            val dialogbinding = layoutInflater.inflate(R.layout.fragment_datlich,null)
+            val dialogbinding = layoutInflater.inflate(R.layout.fragment_datlich, null)
 
             val mydialog = Dialog(requireActivity())
             mydialog.setContentView(dialogbinding)
 
+
+            mydialog.setCancelable(true)
+            mydialog.setCanceledOnTouchOutside(true)
+
             val btnok = dialogbinding.findViewById<Button>(R.id.btnhuy)
             val btnol = dialogbinding.findViewById<TextView>(R.id.tructuyen)
             val btnoff = dialogbinding.findViewById<TextView>(R.id.tructiep)
+
             btnok.setOnClickListener {
                 mydialog.dismiss()
             }
 
             btnol.setOnClickListener {
                 mydialog.dismiss()
-                val uri = Uri.parse("tel: 0383865954")
-                val intent = Intent(Intent.ACTION_DIAL,uri)
+                val uri = Uri.parse("tel:0383865954")
+                val intent = Intent(Intent.ACTION_DIAL, uri)
                 startActivity(intent)
             }
 
@@ -182,10 +237,9 @@ class Login : Fragment() {
                 mydialog.dismiss()
                 parentFragmentManager.beginTransaction().replace(R.id.holder, Datlichoff()).addToBackStack(null).commit()
             }
-            mydialog.setCancelable(false)
+
             mydialog.show()
         }
-
-
     }
+
 }

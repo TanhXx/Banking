@@ -14,7 +14,11 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
+import com.example.banking.Bottomsheet_Rateus
+import com.example.banking.FeedBack
+import com.example.banking.R
 import com.example.banking.databinding.FragmentProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
@@ -22,6 +26,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
 import java.io.ByteArrayOutputStream
+import java.io.File
 
 
 class Profile : Fragment() {
@@ -33,6 +38,7 @@ class Profile : Fragment() {
     var stodown = FirebaseStorage.getInstance()
     lateinit var imageBitmap : Bitmap
     lateinit var binding : FragmentProfileBinding
+    private var BottomSheet_Rate : Bottomsheet_Rateus? = null
 
     private val cameraLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == AppCompatActivity.RESULT_OK) {
@@ -66,9 +72,36 @@ class Profile : Fragment() {
             var intent = Intent(requireContext(),Screen::class.java)
             startActivityForResult(intent,234)
         }
+        binding.feedback.setOnClickListener {
+            var intent = Intent(requireContext(),FeedBack::class.java)
+            startActivity(intent)
+        }
 
         getinfo()
       /*  tablayout()*/
+
+        binding.gt.setOnClickListener {
+            val bitmap = BitmapFactory.decodeResource(resources, R.drawable.logonew) // Thay R.drawable.logonew bằng tên tài nguyên của bạn
+            val cachePath = File(requireContext().cacheDir, "images")
+            cachePath.mkdirs() // Tạo thư mục nếu chưa tồn tại
+            val sendIntent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(
+                    Intent.EXTRA_TEXT,
+                    "Cùng nhau tải app và nhận quà nào bạn ơi: https://play.google.com/store/apps/details?id=" + requireContext().packageName
+                )
+                type = "image/*" // Đặt loại dữ liệu là hình ảnh
+                val imageUri = FileProvider.getUriForFile(
+                    requireContext(),
+                    requireContext().applicationContext.packageName + ".provider",
+                    File("$cachePath/image.png")
+                )
+                putExtra(Intent.EXTRA_STREAM, imageUri)
+                addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION) // Cấp quyền đọc cho ứng dụng khác
+            }
+            startActivity(Intent.createChooser(sendIntent, "Chia sẻ"))
+        }
+
 
 
         binding.viewuser.setOnClickListener {
@@ -79,6 +112,10 @@ class Profile : Fragment() {
         binding.thongtincanhan.setOnClickListener {
             var intent = Intent(requireContext(),Info::class.java)
             startActivityForResult(intent,123)
+        }
+        binding.uudai.setOnClickListener {
+            BottomSheet_Rate = Bottomsheet_Rateus(requireContext())
+            BottomSheet_Rate?.checkShowBottomSheet()
         }
         binding.logout.setOnClickListener {
            var buidler = AlertDialog.Builder(requireContext())

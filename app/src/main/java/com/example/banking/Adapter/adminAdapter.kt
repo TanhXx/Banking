@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.banking.Data.dataAdmin
 
-class adminAdapter(var mContext : Context, var ds: ArrayList<dataAdmin>) :
+class   adminAdapter(var mContext : Context, var ds: ArrayList<dataAdmin>) :
     RecyclerView.Adapter<adminAdapter.adminviewHolder>() {
     inner class adminviewHolder(itemView : View) : RecyclerView.ViewHolder(itemView){
         var ndchat = itemView.findViewById<TextView>(com.example.banking.R.id.textmess)

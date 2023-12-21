@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.banking.R
 import com.example.banking.databinding.BottomsheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -29,8 +30,16 @@ class BottomSheetCT : BottomSheetDialogFragment() {
             dismiss()
         }
 
+        binding.giuatanhx.setOnClickListener {
+            /*parentFragmentManager.beginTransaction().replace(R.id.framgent_container_aaa, FormChuyenTien()).commit()*/
+            var intent = Intent(requireContext(),TaiKhoanvaThe::class.java)
+            startActivityForResult(intent,1)
+            dismiss()
+        }
+    }
 
-
+    override fun getTheme(): Int {
+        return R.style.CustomBottomSheetDialogTheme
     }
 
 

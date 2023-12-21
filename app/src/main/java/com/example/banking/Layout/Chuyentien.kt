@@ -47,6 +47,18 @@ class Chuyentien : AppCompatActivity() {
         binding = ActivityChuyentienBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Nhận dữ liệu từ Intent
+        val receivedIntent = intent
+        val receivedId = receivedIntent.getStringExtra("ID_KEY")
+
+        // Kiểm tra xem có dữ liệu không null trước khi sử dụng
+        if (receivedId != null) {
+            // Sử dụng dữ liệu nhận được ở đây
+            Log.d("Received ID", receivedId)
+            binding.sotknguoinhan.setText(receivedId)
+            // Ví dụ: Hiển thị ID trong logcat
+        }
+
         binding.back.setOnClickListener {
          /*  supportFragmentManager.beginTransaction().replace(com.example.banking.R.id.holderct  , HomePage()).commit()*/
             setResult(Activity.RESULT_OK)

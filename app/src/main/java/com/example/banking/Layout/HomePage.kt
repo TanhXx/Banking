@@ -1,11 +1,13 @@
 package com.example.banking.Layout
 
+import android.annotation.SuppressLint
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.ActivityInfo
-import android.graphics.BitmapFactory
+import android.graphics.Bitmap
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -13,12 +15,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.example.banking.Taomaqr
 import com.example.banking.TientietkiemService
 import com.example.banking.databinding.FragmentHomePageBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
+import com.google.zxing.BarcodeFormat
+import com.google.zxing.MultiFormatWriter
+import com.google.zxing.WriterException
+import com.google.zxing.common.BitMatrix
 import java.text.SimpleDateFormat
 import java.util.Locale
 
@@ -30,6 +38,7 @@ class HomePage : Fragment() {
     private var checksdt = ""
     val db = Firebase.firestore
     val auth = FirebaseAuth.getInstance()
+
 
     private lateinit var binding: FragmentHomePageBinding
     override fun onCreateView(
@@ -47,8 +56,9 @@ class HomePage : Fragment() {
 
         getinfo()
 
-
         noti()
+
+
 
 
 
@@ -75,7 +85,7 @@ class HomePage : Fragment() {
         }
 
         binding.Tkvt.setOnClickListener {
-            var intent = Intent(requireContext(), TaiKhoanvaThe::class.java)
+            var intent = Intent(requireContext(), Taomaqr::class.java)
             startActivity(intent)
         }
 
@@ -93,7 +103,8 @@ class HomePage : Fragment() {
     }
 
     companion object{
-
+        var names : String? = null
+        var sdts : String ? = null
         var TongCks : Double = 0.0
         var Sodus : Double = 0.0
         var Tientietkiem : Double = 0.0
@@ -109,6 +120,7 @@ class HomePage : Fragment() {
     }
 
 
+    @SuppressLint("SuspiciousIndentation")
     private fun getinfo() {
         val UserID = auth.currentUser!!.uid
 
@@ -116,12 +128,24 @@ class HomePage : Fragment() {
         val docRef = db.collection("Users").document(UserID)
         val filename = "${UserID}.jpg"
         val storeRef = stoimg.reference.child("Image").child(UserID!!).child(filename)
+        // Lấy URL công cộng của tệp tin từ StorageReference
+        storeRef.downloadUrl.addOnSuccessListener { uri ->
+            val imageUrl = uri.toString()
+            Log.d("huhu", "getinfo: ${imageUrl}")
+            
+            Glide.with(this /* context */)
+                .load(imageUrl)
+                .into(binding.anh /* ImageView */)
+        }.addOnFailureListener { exception ->
+            Log.e("TAG", "Lỗi khi lấy URL ảnh: $exception")
+        }
 
-        storeRef.getBytes(1324 * 1324).addOnSuccessListener { byte ->
+
+        /*storeRef.getBytes(1324 * 1324).addOnSuccessListener { byte ->
 
             val bitmaps = BitmapFactory.decodeByteArray(byte, 0, byte.size)
             binding.anh.setImageBitmap(bitmaps)
-        }
+        }*/
 
 
 
@@ -133,8 +157,8 @@ class HomePage : Fragment() {
                 return@addSnapshotListener
             }
             if (snapshot != null && snapshot.exists()) {
-                val names = snapshot.getString("name")
-                val sdts = snapshot.getString("SDT")
+                names = snapshot.getString("name")
+                sdts = snapshot.getString("SDT")
                 val ages = snapshot.getString("date")
                 val sodus = snapshot.getDouble("sodu")
                 val tongcks = snapshot.getDouble("Tongck")
@@ -146,6 +170,32 @@ class HomePage : Fragment() {
                 val tienlaitraphieus = snapshot.getDouble("tienlaitraiphieu")
                 val timeguitps = snapshot.getString("timebatdauguitp")
                 val tongtk3s = snapshot.getDouble("tongtk3")
+
+                    try {
+                        val bitMatrix: BitMatrix = MultiFormatWriter().encode(
+                            sdts,
+                            BarcodeFormat.QR_CODE,
+                            400,
+                            400,
+                            null
+                        )
+
+                        // Chuyển BitMatrix thành Bitmap
+                        val width = bitMatrix.width
+                        val height = bitMatrix.height
+                        val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
+                        for (x in 0 until width) {
+                            for (y in 0 until height) {
+                                bmp.setPixel(x, y, if (bitMatrix[x, y]) Color.BLACK else Color.WHITE)
+                            }
+                        }
+                        Log.d("huhu", "onViewCreated: ${bmp}")
+
+                        binding.qrImageView.setImageBitmap(bmp)
+                    } catch (e: WriterException) {
+                        e.printStackTrace()
+                        Log.d("huhu", "getinfo: ${e}")
+                    }
 
 
 
@@ -234,8 +284,6 @@ class HomePage : Fragment() {
                     val timefm = time.toInt()
                     timechottp = timefm
                 }
-
-
 
                 timechenhlechtp = timechottp
 

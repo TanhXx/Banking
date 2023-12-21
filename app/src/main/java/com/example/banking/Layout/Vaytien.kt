@@ -1,5 +1,6 @@
 package com.example.banking.Layout
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +16,10 @@ class Vaytien : AppCompatActivity() {
         binding.vaymuanha.setOnClickListener {
                 var intent = Intent(this,Tuvanvaymuanha::class.java)
             startActivity(intent)
+        }
+        binding.imageView8.setOnClickListener {
+            setResult(Activity.RESULT_OK)
+            finish()
         }
     }
 }

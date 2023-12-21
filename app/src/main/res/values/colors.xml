@@ -9,4 +9,12 @@
     <color name="white">#FFFFFFFF</color>
     <color name="Text">#0089FF</color>
     <color name="xanh">#0089FF</color>
+    <color name="text_bottomshet_rate">#173430</color>
+    <color name="color_btsrate">#A2ED00</color>
+    <color name="text_color_bts_rate">#A0A0A0</color>
+    <color name="color_text_rateus">#171725</color>
+    <color name="unchecked_thumb">#8C8C8C</color>
+    <color name="checked_thumd">#FFFFFF</color>
+    <color name="unchecked_track">#CDCDCD</color>
+    <color name="checked_track">#03FF72</color>
 </resources>

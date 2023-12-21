@@ -72,5 +72,24 @@
         năm 2023
 </string>
 
+    <string name="nv_auto_click">Tự động click</string>
+    <string name="nv_auto_scroll">Tự động cuộn</string>
+    <string name="select_start">Chọn ứng dụng khởi đầu</string>
+    <string name="add_app">Thêm ứng dụng</string>
+    <string name="tab1">Ứng dụng của tôi</string>
+    <string name="tab2">Các ứng dụng hệ thống</string>
+    <string name="oh_no">Ôi không, bạn chưa có bất kỳ dữ liệu nào. Thêm ngay!</string>
+    <string name="you_want">Bạn muốn thêm ứng dụng này vào chế độ này</string>
+    <string name="add_all">Thêm tất cả</string>
+    <string name="contact">Liên hệ</string>
+    <string name="thanks_for">Thanks for your feedback</string>
+    <string name="setup">Cài đặt</string>
+    <string name="pre">Nâng cấp Premium</string>
+    <string name="gui">Hướng dẫn</string>
+    <string name="poli">Chính sách Riêng tư</string>
+    <string name="share">Chia sẻ</string>
+    <string name="rate">Đánh giá Ứng dụng</string>
+
+
 </resources>
 
